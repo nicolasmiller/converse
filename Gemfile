@@ -35,6 +35,10 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Stuff
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
 gem 'aws-sdk'
 
 gem 'compass'
