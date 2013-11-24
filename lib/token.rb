@@ -2,6 +2,7 @@ require 'aws-sdk'
 
 class Token
   POLICY_DURATION = 900.freeze
+  TABLE_PREFIX = 'c_'.freeze
 
   def self.get_token twitter_handles
     table_name = self.get_table_name(twitter_handles)
@@ -12,7 +13,7 @@ class Token
   end
 
   def self.get_table_name twitter_handles
-    Digest::MD5.hexdigest(twitter_handles.sort.join('!'))
+    TABLE_PREFIX + Digest::MD5.hexdigest(twitter_handles.sort.join('!'))[0..(30 - TABLE_PREFIX.length)]
   end
 
   def self.sqs_policy table_name
