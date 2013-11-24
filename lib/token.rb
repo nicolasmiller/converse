@@ -22,7 +22,7 @@ class Token
         {
           "Sid" => SecureRandom.hex,
           "Effect" => "Allow",
-          "Action" => ["dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:PutItem"],
+          "Action" => ["dynamodb:DeleteItem", "dynamodb:GetItem", "dynamodb:PutItem", "dynamodb:CreateTable"],
           "Resource" => "arn:aws:dynamodb:us-west-1:286010418145:table/#{table_name}"
         }
       ]
