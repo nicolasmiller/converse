@@ -1,0 +1,8 @@
+.mono {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12pt;
+}
+
+#message, #chat {
+  width: 800px;
+}
