@@ -1,0 +1,20 @@
+#chat.mono
+  %input#message.mono{type: "text"}/
+  %a{href: "javascript:main.send()"}
+    SEND
+  %div
+    %a{href: "javascript:main.nuke()"}
+      NUKE
+  %div
+    %a{href: "javascript:main.get_messages()"}
+      GET
+  .mono
+    Room
+    %input#room.mono{type: "text"}/
+    %a{href: "javascript:main.switch_room()"}
+      SWITCH ROOM
+  .mono
+    Handle
+    %input#handle.mono{type: "text"}/
+    %a{href: "javascript:main.switch_handle()"}
+      SWITCH HANDLE
