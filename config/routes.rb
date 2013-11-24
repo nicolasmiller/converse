@@ -1,5 +1,8 @@
 Converse::Application.routes.draw do
+  get '/auth/:provider/callback', to: 'session#create'
+  get '/auth/failure', to: 'session#failure'
   root "main#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -34,3 +34,22 @@ end
 
 # Use unicorn as the app server
 gem 'unicorn'
+
+# Stuff
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'aws-sdk'
+
+gem 'compass'
+gem 'susy'
+
+group :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'rspec-mocks'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'rack-test'
+  gem 'shoulda-matchers'
+  gem 'timecop'
+end
