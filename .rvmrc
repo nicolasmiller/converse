@@ -1,1 +1,2 @@
 rvm use 2.1.0@converse --create
+export $(sed '/^#/d' .env)
