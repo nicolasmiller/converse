@@ -1,4 +1,5 @@
 Converse::Application.routes.draw do
+  get '/auth/token', to: 'session#token'
   get '/auth/:provider/callback', to: 'session#create'
   get '/auth/failure', to: 'session#failure'
   root "main#index"

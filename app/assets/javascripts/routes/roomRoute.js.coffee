@@ -2,19 +2,15 @@
 Converse.RoomRoute = Ember.Route.extend
   
   model: (params) ->
-    console.log users = @paramsAsString(params)
-
-    # get tokens from server
-    $.getJSON "/auth/token?users=#{users}"
-      success: (data) ->
-        console.log data
+    users = @paramsAsString(params)
 
     # Set AWS config
+    # @TODO: get tokens from server rather than set them statically
     AWS.config.update
       accessKeyId: 'AKIAJOPZGEJIVXVNFLFQ'
       secretAccessKey: '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'
     AWS.config.region = 'us-west-1'
-    
+
     # create reference to DynamoDB
     db = new AWS.DynamoDB
       params:
