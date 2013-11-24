@@ -2,16 +2,37 @@
 Converse.RoomRoute = Ember.Route.extend
   
   model: (params) ->
-    # extract users into array to create request
-    r = []
-    for key, val of params
-      r.push val if val.indexOf("@") isnt -1
+    console.log users = @paramsAsString(params)
 
-    # console.log r
+    # get tokens from server
+    $.getJSON "/auth/token?users=#{users}"
+      success: (data) ->
+        console.log data
 
-    # request server keys with array
+    # Set AWS config
+    AWS.config.update
+      accessKeyId: 'AKIAJOPZGEJIVXVNFLFQ'
+      secretAccessKey: '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'
+    AWS.config.region = 'us-west-1'
+    
+    # create reference to DynamoDB
+    db = new AWS.DynamoDB
+      params:
+        TableName: 'votechat'
 
-    # request conversation with keys
-  
+    # request correct conversation
+    db.getItem
+      'Key':
+        'hash':
+          'S': "room"
+        'range': ""
+      , (data) -> console.log data
 
     # posts.findBy 'id', params.post_id
+
+  # extract params into to create request
+  paramsAsString: (params) ->
+    r = []
+    for key, val of params
+      r.push val.replace("@", "") if val.indexOf("@") isnt -1
+    r.toString()
