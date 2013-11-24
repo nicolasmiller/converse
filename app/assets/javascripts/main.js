@@ -39,8 +39,8 @@ main.delete = function(hash, range, callback) {
 
 $(document).ready(function() {
   var i;
-  AWS.config.update({accessKeyId: 'accessKeyId', secretAccessKey: 'secretAccessKey'});
-  AWS.config.region = 'us-west-2';
+  AWS.config.update({accessKeyId: 'AKIAJOPZGEJIVXVNFLFQ', secretAccessKey: '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'});
+  AWS.config.region = 'us-west-1';
   main.dy = new AWS.DynamoDB({params: {TableName: 'votechat'}});
   // main.dy.listTables(function(err, data) {
   //    console.log(data.TableNames);
