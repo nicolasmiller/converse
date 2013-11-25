@@ -3,32 +3,23 @@ Converse.RoomRoute = Ember.Route.extend
   
   model: (params) ->
     users = @paramsAsString(params)
-
-    # Set AWS config
-    # @TODO: get tokens from server rather than set them statically
-    AWS.config.update
-      accessKeyId: 'AKIAJOPZGEJIVXVNFLFQ'
-      secretAccessKey: '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'
-    AWS.config.region = 'us-west-1'
-
-    # create reference to DynamoDB
-    db = new AWS.DynamoDB
-      params:
-        TableName: 'votechat'
-
-    # request correct conversation
-    db.getItem
-      'Key':
-        'hash':
-          'S': "room"
-        'range': ""
-      , (data) -> console.log data
-
-    # posts.findBy 'id', params.post_id
+    EmberFire.Array.create
+      ref: new Firebase("https://converse-chat.firebaseio.com/#{users}/messages")
 
   # extract params into to create request
   paramsAsString: (params) ->
     r = []
     for key, val of params
       r.push val.replace("@", "") if val.indexOf("@") isnt -1
-    r.toString()
+    r.sort().toString()
+
+
+Converse.RoomController = Ember.ArrayController.extend
+  msg: ""
+  from: "@handle"
+  actions:
+    addMessage: ->
+      console.log @.get('msg')
+      @pushObject
+        from: @.get('from')
+        msg: @.get('msg')
