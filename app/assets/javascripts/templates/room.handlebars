@@ -1,0 +1,14 @@
+Hai!
+<ul>
+  {{#each}}
+    <li>
+      {{this.from}} - {{this.msg}}
+    </li>
+  {{/each}}
+</ul>
+
+<form {{action "addMessage" on="submit"}}>
+  {{input id="fromInput" value=from}}
+  {{input id="messageInput" value=msg placeholder="Enter your message..."}}
+  <button type=submit>Create</button>
+</form>
