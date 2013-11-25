@@ -1,5 +1,7 @@
 # For more information see: http://emberjs.com/guides/routing/
 Converse.Router.map ->
+  @resource "rooms"
+
   # define routes with default settings
   # post model changes depending on what url,
   # nesting it nests templates using {{outlet}}

@@ -4,7 +4,7 @@ Converse.RoomRoute = Ember.Route.extend
   model: (params) ->
     users = @paramsAsString(params)
     EmberFire.Array.create
-      ref: new Firebase("https://converse-chat.firebaseio.com/#{users}/messages")
+      ref: new Firebase("https://converse-chat.firebaseio.com/rooms/#{users}/messages")
 
   # extract params into to create request
   paramsAsString: (params) ->
@@ -16,10 +16,12 @@ Converse.RoomRoute = Ember.Route.extend
 
 Converse.RoomController = Ember.ArrayController.extend
   msg: ""
-  from: "@handle"
+  user: @userDetails
+  nickname: "@" + @userDetails.nickname
   actions:
     addMessage: ->
-      console.log @.get('msg')
       @pushObject
-        from: @.get('from')
-        msg: @.get('msg')
+        from: @get('nickname')
+        msg: @get('msg')
+
+      @set "msg", null
