@@ -2,11 +2,5 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.mono {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 12pt;
-}
-
-#message, #chat {
-  width: 800px;
-}
+/* Global variables */
+$font-family: 'Helvetica Neue', Helvetica, sans-serif;

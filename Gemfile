@@ -3,9 +3,6 @@ source 'http://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
 # Haml
 gem 'haml-rails'
 
@@ -43,8 +40,10 @@ gem 'aws-sdk'
 gem 'ember-rails'
 gem 'ember-source'
 
-gem 'compass'
-gem 'susy'
+group :assets do
+  gem 'sass-rails' # if running rails 3.1 or greater
+  gem 'compass-rails'
+end
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'

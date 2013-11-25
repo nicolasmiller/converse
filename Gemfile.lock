@@ -52,6 +52,8 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
     descendants_tracker (0.0.3)
@@ -180,9 +182,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    susy (1.0.9)
-      compass (>= 0.12.2)
-      sass (>= 3.2.0)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -226,7 +225,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk
   coffee-rails (~> 4.0.0)
-  compass
+  compass-rails
   ember-rails
   ember-source
   haml-rails
@@ -238,10 +237,9 @@ DEPENDENCIES
   rails (= 4.0.1)
   rspec-mocks
   rspec-rails (~> 3.0.0.beta)
-  sass-rails (~> 4.0.0)
+  sass-rails
   sdoc
   shoulda-matchers
-  susy
   therubyracer
   timecop
   turbolinks
