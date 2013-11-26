@@ -36,7 +36,6 @@ gem 'unicorn'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'twitter'
-gem 'aws-sdk'
 gem 'ember-rails'
 gem 'ember-source'
 
