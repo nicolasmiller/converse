@@ -1,15 +1,17 @@
-Hai!
-<ul class="messages">
-  {{#each}}
-    <li class="message">
-      {{this.from}} - {{this.msg}}
-    </li>
-  {{/each}}
-</ul>
+<div class="room">
+  Hai!
+  <ul class="messages">
+    {{#each}}
+      <li class="message">
+        {{this.from}} - {{this.msg}}
+      </li>
+    {{/each}}
+  </ul>
 
-<form {{action "addMessage" on="submit"}}>
-  <img {{bind-attr src="user.image"}}>
-  {{input id="fromInput" value=nickname readonly="true"}}
-  {{input id="messageInput" value=msg placeholder="Enter your message..."}}
-  <button type=submit>Create</button>
-</form>
+  <form {{action "addMessage" on="submit"}}>
+    <img {{bind-attr src="user.image"}}>
+    {{input id="fromInput" value=nickname readonly="true"}}
+    {{textarea id="messageInput" value=msg placeholder="Enter your message..."}}
+    <button type=submit>Create</button>
+  </form>
+</div>
