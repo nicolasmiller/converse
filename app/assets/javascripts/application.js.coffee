@@ -5,5 +5,4 @@
 #= require emberfire
 #= require_self
 #= require converse
-
 window.Converse = Ember.Application.create()

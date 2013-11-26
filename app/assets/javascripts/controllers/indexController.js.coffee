@@ -7,7 +7,6 @@ Converse.IndexController = Ember.ArrayController.extend
           alert "ERROR"
           console.log(error);
         else if (user)
-          console.log 'LOGGED IN', user
           @transitionToRoute 'rooms'
 
       auth.login('twitter')
