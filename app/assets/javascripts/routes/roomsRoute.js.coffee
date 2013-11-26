@@ -1,3 +1,7 @@
+# @TODO:
+# - @reply :)
+# - @ autocomplete
+
 # Route to handle our room
 Converse.RoomsRoute = Ember.Route.extend
   

@@ -1,6 +1,9 @@
+# @TODO:
+# - list rooms you're in
+# - autocomplete helper to create a new room
+
 # Route to handle our room
 Converse.RoomRoute = Ember.Route.extend
-  
   model: (params) ->
     users = @paramsAsString(params)
     EmberFire.Array.create
@@ -12,16 +15,3 @@ Converse.RoomRoute = Ember.Route.extend
     for key, val of params
       r.push val.replace("@", "") if val.indexOf("@") isnt -1
     r.sort().toString()
-
-
-Converse.RoomController = Ember.ArrayController.extend
-  msg: ""
-  user: ""
-  nickname: "@"
-  actions:
-    addMessage: ->
-      @pushObject
-        from: @get('nickname')
-        msg: @get('msg')
-
-      @set "msg", null
