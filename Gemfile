@@ -40,8 +40,8 @@ gem 'ember-rails'
 gem 'ember-source'
 
 group :assets do
-  gem 'sass-rails' # if running rails 3.1 or greater
-  gem 'compass-rails'
+  gem 'sass-rails',    '~> 4.0.0'
+  gem 'compass-rails', '~> 2.0.alpha.0'
 end
 
 group :test do
