@@ -1,11 +1,8 @@
 Converse.RoomController = Ember.ArrayController.extend
-  msg: ""
-  user: ""
+  message: ""
   nickname: "@"
   actions:
     addMessage: ->
       @pushObject
         from: @get('nickname')
-        msg: @get('msg')
-
-      @set "msg", null
+        message: @get('message')

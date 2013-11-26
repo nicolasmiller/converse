@@ -3,7 +3,7 @@
   <ul class="messages">
     {{#each}}
       <li class="message">
-        {{this.from}} - {{this.msg}}
+        {{this.from}} - {{this.message}}
       </li>
     {{/each}}
   </ul>
@@ -11,7 +11,7 @@
   <form {{action "addMessage" on="submit"}}>
     <img {{bind-attr src="user.image"}}>
     {{input id="fromInput" value=nickname readonly="true"}}
-    {{input id="messageInput" value=msg placeholder="Enter your message..."}}
+    {{input id="messageInput" value=message placeholder="Enter your message..."}}
     <input type=submit value="Submit">
   </form>
 </div>

@@ -8,8 +8,6 @@ Converse.IndexController = Ember.ArrayController.extend
           console.log(error);
         else if (user)
           console.log 'LOGGED IN', user
-          store = @get 'store'
-          store.push 'currentUser', user
-          @transitionTo 'rooms'
+          @transitionToRoute 'rooms'
 
       auth.login('twitter')
