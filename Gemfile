@@ -44,6 +44,13 @@ group :assets do
   gem 'compass-rails', '~> 2.0.alpha.0'
 end
 
+group :development do
+  # Livereload stuff
+  gem 'guard-livereload', require: false
+  gem 'rack-livereload'
+  gem 'rb-fsevent',       require: false
+end
+
 group :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'rspec-mocks'
