@@ -2,12 +2,8 @@
 %html
   %head
     %title Converse
-    // Get user details from session
-    :coffee
-      @userDetails = #{ session['user'].to_json }
-
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "//cdn.firebase.com/v0/firebase.js", "application", "data-turbolinks-track" => true
+    = javascript_include_tag "//cdn.firebase.com/v0/firebase.js", "//cdn.firebase.com/v0/firebase-simple-login.js", "application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
   %body
