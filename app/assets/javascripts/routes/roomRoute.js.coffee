@@ -16,8 +16,8 @@ Converse.RoomRoute = Ember.Route.extend
 
 Converse.RoomController = Ember.ArrayController.extend
   msg: ""
-  user: @userDetails
-  nickname: "@" + @userDetails.nickname
+  user: ""
+  nickname: "@"
   actions:
     addMessage: ->
       @pushObject
